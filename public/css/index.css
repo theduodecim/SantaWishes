@@ -1,0 +1,84 @@
+body {
+    background-color: transparent;
+    overflow-y: hidden;
+    background-image: url("/img/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 70%;
+
+}
+
+body::-webkit-scrollbar {
+    width: 0.7em;
+    background: transparent;
+}
+
+#background {
+    background-color: transparent;
+}
+
+#herobody::-webkit-scrollbar {
+    width: 0.7em;
+    background: transparent;
+}
+
+#herobody {
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#docker {
+    position: relative;
+    left: 0;
+}
+
+#buttonsend {
+    background-color: transparent;
+    border-style: none;
+}
+
+
+#card {
+    background-color: transparent;
+    border-style: none;
+}
+
+#santacard {
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    height: 30%;
+    width: 60%;
+}
+
+#rainbow {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet);
+}
+
+.rainbow {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, orange, yellow, green, cyan, blue, violet);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, orange, yellow, green, cyan, blue, violet);
+}
+
+#powerby {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

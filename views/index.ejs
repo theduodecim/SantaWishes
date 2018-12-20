@@ -2,27 +2,145 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>My Node App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>DockerNodeJsMongoDBProject</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+    crossorigin="anonymous" />
+  <link href="/css/index.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
-  <h1>My Node App</h1>
-  <form method="post" action="/item/add">
-    <label for="name">Name</label>
-    <input type="text" name="name">
-    <input type="submit" value="Add">
-  </form>
-  <h4>Items:</h4>
-  <ul>
-    <% items.forEach(function(item) { %>
+    <div id="background" class="container is-fullhd">
+
+      <section class="hero is-info">
+          <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Santa Wishes</h1>
+              <h2 class="subtitle">
+                  <strong>Leave a Christmas Message to Santa <i class="fas fa-gift"></i></strong>
+              </h2>
+            </div>
+          </div>
+        </section>
+
+  <div id="herobody" class="hero-body">
+    <ul>
+      <% items.reverse().forEach(function(item) { %>
       <li>
-        <%= item.name %>
+        <div class="box">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64">
+                <img width="64" height="64" src="img/santa.jpg" alt="Image" />
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>
+                    <%= item.name %></strong> <br />
+                  <%= item.description %>
+                </p>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <a class="level-item" aria-label="like">
+                    <span class="icon is-small">
+                      <i class="fas fa-heart" aria-hidden="true"></i>
+                    </span>
+                    <span class="icon is-small"> </span>
+                  </a>
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
       </li>
       <% }); %>
-  </ul>
+    </ul>
+  </div>
+
+  <footer class="footer">
+    <div class="media-content">
+      <form method="post" action="/item/add" prevent="autoload">
+        <div class="field">
+          <p class="control">
+            <input required minlength="3" name="name" class="input is-success" type="text" placeholder="Your Name" />
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <textarea minlength="10" name="description" class="textarea" placeholder="Add a comment..."></textarea>
+          </p>
+        </div>
+
+        <div class="field">
+          <p class="control">
+
+              <button  id="card" type="button">
+                  <a id="send" class="button is-large">
+                      <span class="icon is-medium">
+                        <i class="fas fa-sleigh"></i>
+                      </span>
+                      <span>Send A letter to Santa</span>
+                    </a>
+                </button>
+                <div id="powerby">
+                    <article class="media">
+                        <div class="media-right">
+                      <img height="150rem"  width="150rem" src="img/docker_logo.png">
+                        <img height="150rem"  width="150rem" src="img/node_express_mongodb.png">
+                          <img height="150rem" width="150rem" src="img/digital_ocean.png">
+                      </div>
+                    </article>
+                  </div>
+                <article id="santacard"  class="media">
+                    <figure class="media-left">
+                      <p class="image is-128x128">
+                        <img  src="img/nomos.jpg">
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <div class="content">
+                        <p>
+                          <strong>Gnomes of Santa</strong>
+                          <br>
+                            <p id="rainbow"> Thanks we will send this card the soon as possible </p> 
+                        </p>
+                      
+                      </div>
+                      <nav class="level is-mobile">
+                        <div class="level-left">
+                          <a class="level-item">
+                              <button id="buttonsend" type="submit">
+                              <a class="button is-success">
+                                  <span class="icon is-small">
+                                    <i class="fas fa-check"></i>
+                                  </span>
+                                  <span>Thanks Send my Letter :)</span>
+                                </a>
+                                </button>
+                          </a>
+                        </div>
+                      </nav>
+                    </div>
+                    <div class="media-right">
+                    </div>
+                  </article>
+          </p>
+        </div>
+
+      </form>
+    </div>
+  </footer>
+  <script src="/lib/jquery-3.3.1.min.js" /> </script>
+  <script src="/js/index.js" /></script>
+ 
+</div>
 </body>
 
 </html>

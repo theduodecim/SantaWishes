@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.set('view engine', 'ejs'); // Setting the view engine
+app.use(express.static(__dirname + '/public')); // this allow to express to look on the public folder for the images
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -34,11 +35,13 @@ app.get('/', (req, res) => {
 });
 
 app.post('/item/add', (req, res) => {
-  const newItem = new Item({
-    name: req.body.name
-  });
 
-  newItem.save().then(item => res.redirect('/'));
+  const newItem = new Item({
+    name: req.body.name,
+    description: req.body.description
+  });
+  newItem.save()
+    .then(item => res.redirect('/'));
 });
 
 const port = 3000;
